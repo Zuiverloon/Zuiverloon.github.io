@@ -1,23 +1,232 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Dear Takane no Hanako San</title>
-</head>
-<script>
-var i=0;
-function showText()
-{
-    if (i%2==0){
-        document.getElementById("id1").style.color="red";}
-    else{
-        document.getElementById("id1").style.color="black";}
-    i++;
-}
-</script>
-<body>
-    <h1 id="id1">我的第一个标题</h1>
-    <p>我的第一个段落。</p>
-<button onclick="showText()">go on</button>
+<head> 
+	<meta charset="utf-8"> 
+	<title>Dear 高嶺の花子さん</title> 
+</head> 
+
+<body style="background-color: #e6e6fa;">
+	<style>
+	.site__title {
+		font-size: 30px;
+		text-align: center;
+		/*text-decoration: underline; while blink is not supported */
+		color: #FFAA00;
+		font-family: STKaiti;
+		background-image: -webkit-linear-gradient(36deg, #FF0000, #FFAABB);
+		/* 36 deg control speed; bigger number faster speed */
+	
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-webkit-animation: hue 10s infinite linear;
+	
+		/* 10s control speed 	shorter time faster speed */
+	}
+	@-webkit-keyframes hue {
+		from {
+			-webkit-filter: hue-rotate(0deg);
+			-moz-filter: hue-rotate(0deg);
+		}
+		to {
+			-webkit-filter: hue-rotate(-360deg);
+			-moz-filter: hue-rotate(-360deg);
+		}
+	}
+	</style>
+	<p class="site__title" > 现在是 </p>
+
+
+	<p class="site__title" id="time"></p>
+	<script>
+	//In javascript, the annotation should be like this.	
+		var show= function(){
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth()+1;
+			month= month<10?"0"+month:month;
+			var day = date.getDate();//获取日期
+			day= day<10?"0"+day:day;
+			var hour = date.getHours();
+			hour= hour<10?"0"+hour:hour;
+			var minute = date.getMinutes();
+			minute= minute<10?"0"+minute:minute;
+			var week = date.getDay();//获取星期
+			var second=date.getSeconds();
+			second= second<10?"0"+second:second;
+			week = "日一二三四五六".charAt(week);
+			week="星期"+week;
+			result=year+"-"+month+"-"+day+" "+week+" "+hour+":"+minute+":"+second;
+			document.getElementById("time").innerHTML=result;
+		 }
+		show();
+		setInterval("show()",1000);
+		</script>
+	
+<!--   body part    -->
+
+	<p class="site__title" > 
+	(害其实这时间没啥用 <br> 反正不管哪一天都会显示这些文字的啦略略略)
+	</p>
+
+	<p class="site__title" > 
+	叮 按时长大<br>
+	观察地球第21年<br>
+	吸干地球氧气第21年<br>
+	solo出道第21年<br>
+	又大一岁了，该懂点事了，要藏好自己的魅力，不然家里门槛都被踏破了<br>
+	你站的方向风吹过来都是暖的
+	</p>
+
+	<p class="site__title" > 
+	好朋友就是能看见彼此头顶上的光环的人啊
+	</p>
+
+	<p class="site__title" > 
+	再不祝你生日快乐，我又要等365天了
+	</p>
+
+	<p class="site__title" > 
+	祝这世界上最可爱的女孩子生日快乐<br>
+	(好棒啊离退休又近一年)
+	</p>
+	
+
+
+	<p style="text-align: center; color:black; font-size: 30px;"> 
+	例行公事完了<br>
+	后面的东西如果想继续就按那个按钮<br>
+	不想看就不用点了叭<br>
+	⬇️<br>
+	<button type="button" onclick=conhidden() style="text-align: center;width:120px;height:40px;border:2px solid;border-radius:25px;" id="b1">Click to Show</button>
+	</p>
+
+
+	<script>
+		function conhidden(){
+			
+			/* text to show/hide*/
+			a=document.getElementById("p2")
+			if (a.getAttribute("hidden")){
+				a.removeAttribute("hidden")
+			}
+			else{
+				a.setAttribute("hidden","hidden")
+			}/* text to show/hide*/
+
+			a=document.getElementById("mirror")
+			if (a.getAttribute("hidden")){
+				a.removeAttribute("hidden")
+			}
+			else{
+				a.setAttribute("hidden","hidden")
+			}
+
+			/* click to show/click to hide*/
+			b=document.getElementById("b1")
+			if (b.innerHTML=="click to show"){
+				b.innerText="click to hide"
+			}
+			else if (b.innerHTML=="click to hide"){
+				b.innerText="click to show"
+			}/* click to show/click to hide*/
+
+		}
+
+		function colorshift(){
+			a=document.getElementById("p1")
+			a.style.color="#FFAABB"
+			//a.style.font-size="60px"
+		}
+	</script>
+	<!-- button1 -->
+
+
+	<p style="text-align: center; color:black; font-size: 30px;" id="p2" hidden="hidden" >
+	 
+	玩个游戏<br>
+	你猜谁是世界上最可爱的人？<br>
+	先别急着往下拉，想想答案<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	想好了就往下拉看答案叭<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	前方高能，请握住手机<br>
+	(如果不是你想的那位，可别把手机扔掉啊)
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	⬇<br>
+	就是ta!!!!⬇
+	
+	<p style="text-align: center; background-color:black; font-size: 100px" hidden=hidden id="mirror">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</p>
+	
+	</p>
+
+
+
+ 
+<!--   body part    -->
+
 </body>
 </html>
